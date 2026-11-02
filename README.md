@@ -1,76 +1,38 @@
-# Fahad's Travel Agency Website
+# Fahad's Travel Agency
 
-A modern, fully responsive travel agency website built with Next.js (App Router), Tailwind CSS and GSAP. It offers four services: visa services, flight ticket booking, hotel booking and car rental. All data is mock data and no backend or external API is required.
+A responsive travel agency website for exploring destinations and searching sample travel services. The homepage brings visa assistance, flight tickets, hotel stays and car rentals together with destination highlights, testimonials and contact information.
 
-## Links
-
-- Live website: add your Vercel URL here
-- GitHub repository: add your repository URL here
-
-## Tech stack
-
-- Next.js 14 (App Router)
-- Tailwind CSS 3
-- GSAP 3 with ScrollTrigger
-- lucide-react icons
+The search experience provides service-specific tabs and filters over local sample data. This is a front-end demonstration: searches do not connect to booking providers, and the project has no backend or external API.
 
 ## Features
 
-- Responsive layout for mobile, tablet and desktop
-- Tabbed search for visas, flights, hotels and cars, driven by one config file and filtered against mock data
-- Service cards, popular destinations, testimonials, validated contact form and footer
-- GSAP animations: hero timeline, floating cards, scroll reveals, animated counters and hover effects
-- Animations respect the reduced motion preference
+- Responsive homepage with navigation, hero, services, destinations, statistics, testimonials and contact sections
+- Tabbed search for visas, flights, hotels and car rentals, with results filtered from local sample data
+- Contact form with client-side validation
+- Scroll reveals, counters, hero and hover animations, with reduced-motion support
+- Shared UI components for consistent page sections and search results
 
-## Getting started
+## Technology stack
 
-Requirements: Node.js 18.17 or later.
-
-```bash
-npm install
-npm run dev
-```
-
-Open http://localhost:3000 in your browser.
-
-Production build:
-
-```bash
-npm run build
-npm run start
-```
-
-## Deploying to Vercel
-
-1. Push the project to a GitHub repository.
-2. Import the repository at https://vercel.com/new.
-3. Keep the default Next.js settings and deploy. No environment variables are needed.
+- **Next.js 14** — App Router and application structure
+- **React 18** — page and component rendering
+- **Tailwind CSS 3** — utility-based styling, alongside global CSS
+- **GSAP 3** — interface animations and ScrollTrigger effects
+- **lucide-react** — icons
+- **Next Font** — Bricolage Grotesque and DM Sans
 
 ## Project structure
 
-```
-app/                  Layout, global styles and the home page
+```text
+app/                  App Router page, root layout and global styles
 components/
-  layout/             Navbar, Footer
-  sections/           Hero, SearchSection, Services, Destinations, DestinationCard,
-                      Stats, Testimonials, Contact, ContactForm
-  search/             Tabs, SearchForm, ResultsList, ResultCard
-  ui/                 Button, Container, Field, SectionHeading, Reveal, Counter, HoverCard
-data/                 Site content and mock search data
-hooks/                useGsap, a GSAP context hook with cleanup and reduced motion support
+  layout/             Navbar and footer
+  sections/           Homepage sections and destination cards
+  search/             Search tabs, form and result components
+  ui/                 Shared layout, form and animation components
+data/                 Site content and local search data
+hooks/                GSAP lifecycle and reduced-motion handling
 lib/                  GSAP and ScrollTrigger registration
 ```
 
-## Reusable building blocks
-
-- Reveal fades and slides its content in on scroll. Use the stagger prop to animate direct children one after another.
-- Counter counts up to a number when it scrolls into view.
-- HoverCard lifts a card and zooms any child marked with data-zoom.
-- Field renders an input, select or textarea with a label and error message.
-- SearchForm, ResultsList and ResultCard are generic. Adding a new searchable service only needs a new entry in data/search.js.
-
-## Customising
-
-- Edit text, destinations and testimonials in data/site.js.
-- Edit search fields and mock results in data/search.js.
-- Edit colours and fonts in tailwind.config.js and app/layout.js.
+Site copy and destination content are defined in `data/site.js`. Search fields and sample visa, flight, hotel and car results are defined in `data/search.js`.
